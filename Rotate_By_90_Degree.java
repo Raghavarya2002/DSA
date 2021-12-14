@@ -22,6 +22,8 @@ public class Main {
                arr[j][i]=temp;
            }
        }
+        
+        //swapping te column ,converting first column into last and vice-versa
        
        for(int i =0;i<arr.length;i++){
            int leftindex=0;
