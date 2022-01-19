@@ -27,8 +27,7 @@ public class Main {
 		            System.out.println(ss);
 		        }
 		    }
-		}
-		
+		}	
 	}
 
 	public static void main(String[] args) {
@@ -36,5 +35,4 @@ public class Main {
 		String str = scn.next();
 		solution(str);
 	}
-
 }
