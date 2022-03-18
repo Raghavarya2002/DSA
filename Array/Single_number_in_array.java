@@ -9,9 +9,7 @@
 // leetcode
 // basically we used the XOR operator because it  returns true if, and only if, the operands are different. So, for example, the XOR operator can be used when we have to check for two conditions that can't be true at the same time.
 
-<img align="right" alt="GIF" src="https://cdn.dribbble.com/users/461802/screenshots/4753031/media/4711ad8d0ba0dcd367061aa7841f8107.gif" width="400" height="300" />
-  
-class Solution {
+  class Solution {
     public int singleNumber(int[] nums) {
         
        int  result=0;
