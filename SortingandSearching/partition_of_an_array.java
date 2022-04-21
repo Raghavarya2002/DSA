@@ -6,7 +6,7 @@ public class Main {
   public static void partition(int[] arr, int pivot){
     // 0 to j-1 -> <=pivot
     // j to i-1 -> > pivot
-    // i to end -> pivot
+    // i to end -> unknown
     int i =0;
     int j =0;
     
