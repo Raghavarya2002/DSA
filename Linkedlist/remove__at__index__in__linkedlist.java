@@ -14,6 +14,7 @@
 // 3. You are required to complete the body of removeAt function. The function should remove the element available at the index passed as parameter. If the size is 0, should print "List is empty". If the index is inappropriate print "Invalid arguments". Also consider the case when list has a single element.
 // 4. Input and Output is managed for you.
 
+
 import java.io.*;
 import java.util.*;
 
