@@ -1,5 +1,5 @@
-// 1. You are given a partially written GenericTree class.
-// 2. You are required to complete the body of areSimilar function. The function is expected to check if the two trees passed to it are similar in shape or not.
+// 1. You are given a partially written Generic Tree class.
+// 2. You are required to complete the body of are Similar function. The function is expected to check if the two trees passed to it are similar in shape or not.
 
 import java.io.*;
 import java.util.*;
