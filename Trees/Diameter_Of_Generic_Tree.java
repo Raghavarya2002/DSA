@@ -4,6 +4,14 @@
 // 20
 // 10 20 -50 -1 60 -1 -1 30 -70 -1 80 -1 90 -1 -1 40 -100 -1 -1 -1
 
+// Approach:
+// We need to maximize the number of edges between any two nodes to calculate diameter.
+// To be noted that to maximize the number of edges we have to always consider the leaf nodes.
+// Now we wish to find a diameter that passes through our current node.
+// This can be found by adding the deepest subtree and second deepest subtree and adding 2 to their sum.
+// Getting the deepest and second deepest subtree ensures that we are taking the maximum possible edges from the current node and 2 is added to link both the leaves.
+// Now we can recurse this approach for every node in our tree as our diameter need not always pass through the root node. So at each node, we calculate the diameter from the current node and compare it with the global maximum and then we return the height of our subtree which can, later on, be used by any ancestor nodes to calculate their diameter and height.
+
 
 import java.io.*;
 import java.util.*;
