@@ -5,7 +5,7 @@
 
 // We have to solve this problem in O(n) Complexity
 
-// TIME COMPLEXITY- O(n)
+// TIME COMPLEXITY- O(n) , bcoz of three loops , last while loop is running and it is equal to the sum of means sigma of while loop is equals to n , n+n+n(for + while) 
 // Since the hashmap is traversed once therefore the time complexity is linear.
 
 
