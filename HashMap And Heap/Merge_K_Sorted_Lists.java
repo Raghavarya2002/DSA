@@ -1,9 +1,22 @@
+// 1. You are given a list of lists, where each list is sorted.
+// 2. The function is expected to merge k sorted lists to create one sorted list.
+    
+// Approach:
+// We will use the advantage that the given lists are sorted.
+// So first of all, we pick the first element of each list and add it in a box.
+// It is for sure that the smallest of these elements present in this box will be the most deserving candidate for the first position in the final list which needs to be sorted.
+// So we pick the smallest element out of this box and place it at the first position in the list.
+// And after that we again add an element to the box from the same list, to which the removed (smallest) element belonged.
+// We repeat this step until the box is completely empty.
+// And at the end, the final list will have all the elements in the sorted order.
+
+
 import java.io.*;
 import java.util.*;
 
 public class Main {
     
-    public static class Pair{
+    public static class Pair implements Comparable<Pair>{
         int li; //list index
         int di;//data index
         int val;
@@ -12,6 +25,10 @@ public class Main {
             this.li = li;
             this.di = di;
             this.val = val;
+        }
+        
+        public int compareTo(Pair o){
+            return this.val - o.val;
         }
             
     }
