@@ -78,25 +78,36 @@ public class Main {
     display(node.left);
     display(node.right);
   }
+  
+  static ArrayList<Integer> path;
+  
 
   public static boolean find(Node node, int data){
-    boolean findinitself = false;
+   if(node == null){
+       return false;
+   }
     if(node.data == data){
+        path.add(node.data);
         return true;
     }
     
     boolean findinleftchild = find(node.left,data);
     if(findinleftchild){
+         path.add(node.data);
         return true;
     }
     boolean findinrightchild = find(node.right,data);
+    if(findinrightchild){
+         path.add(node.data);
+        return true;
+    }
+    
+    return false;
     
     
   }
 
-  public static ArrayList<Integer> nodeToRootPath(Node node, int data){
-    // write your code here
-  }
+
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -114,10 +125,10 @@ public class Main {
     int data = Integer.parseInt(br.readLine());
 
     Node root = construct(arr);
+    path = new ArrayList<>();
     boolean found = find(root, data);
     System.out.println(found);
 
-    ArrayList<Integer> path = nodeToRootPath(root, data);
     System.out.println(path);
   }
 
