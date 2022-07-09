@@ -88,7 +88,7 @@ public class Main {
 
 //   Step 3: Travel and Solve
   
-  //Tabulation Approach
+  //Tabulation Approach (isko recursively and memoization se bhi kr skte hai , but abhi iteratively kia is approach ko)
       //Iteratively
     public static int countPathsTab(int n){
         int[] dp = new int[n+1];
