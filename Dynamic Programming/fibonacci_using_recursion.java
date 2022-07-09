@@ -1,5 +1,5 @@
 //fibonacci using recursion
-
+//Behuda code hai ye , haha , ek ka fibonacci hum baar baar solve krte hai jaise kbhi 2 ka kbhi 3 ka kbhi kisi ka toh jab ek chiz solve kr li toh baar baar usi ko kyu solve krna , and answer toh same ka same hi rhega jitni baar solve krlo tohchlo aage dekhte hai kya hota hai iska optimize usig dynamic programming approach
 
 import java.io.*;
 import java.util.*;
