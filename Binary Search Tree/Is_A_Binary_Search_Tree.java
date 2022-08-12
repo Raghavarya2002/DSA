@@ -1,3 +1,5 @@
+// Time Complexity: O(n)
+// Space Complexity: O(1) , if we consider space of recursion then it'll be O(logn)
 import java.io.*;
 import java.util.*;
 
