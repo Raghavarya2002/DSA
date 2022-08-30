@@ -5,7 +5,7 @@ class Solution {
         
         //transpose of the matrix
            for(int i =0;i<matrix.length;i++){
-           for(int j =i;j<matrix[0].length;j++){ //only we've to move into the upper/lower triangle of the matrix
+           for(int j =i;j<matrix[0].length;j++){ //only we've to move into the upper/lower triangle of the matrix bcoz some elements are already transposed
                int temp = matrix[i][j]; 
                matrix[i][j]=matrix[j][i];
                matrix[j][i]=temp;
