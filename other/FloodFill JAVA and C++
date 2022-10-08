@@ -1,0 +1,44 @@
+JAVA CODE
+private static final int[][] DIRS = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
+public int[][] floodFill(int[][] image, int sr, int sc, int color) {
+	floodFill(image, sr, sc, image[sr][sc], color);
+	return image;
+}
+
+private void floodFill(int[][] image, int i, int j, int oldColor, int newColor) {
+	if (i == -1 || i == image.length || j == - 1 || j == image[0].length || image[i][j] != oldColor || image[i][j] == newColor)
+		return;
+	image[i][j] = newColor;
+	
+	for (var dir : DIRS)
+		floodFill(image, i + dir[0], j + dir[1], oldColor, newColor);
+}
+
+
+C++ CODE
+class Solution {
+	public:
+		vector<pair<int,int>> dir={{-1,0},{1,0},{0,-1},{0,1}};
+		void dfs(int i,int j,vector<vector<int>>& img,int color,int in,int m,int n){
+			img[i][j]=color;
+			for(auto d:dir){
+				int r=i+d.first;
+				int c=j+d.second;
+				if(r>=0 && r<m && c>=0 && c<n && img[r][c]==in){
+					img[r][c]=color;
+					dfs(r,c,img,color,in,m,n);
+				}
+			}   
+		}
+
+		vector<vector<int>> floodFill(vector<vector<int>>& img,int sr,int sc,int color){
+			int in=img[sr][sc];
+			if(in!=color){
+				int m=img.size();
+				int n=img[0].size();
+				dfs(sr,sc,img,color,in,m,n);
+			}
+			return img;
+		}
+	};
