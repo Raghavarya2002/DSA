@@ -1,0 +1,81 @@
+//problem link 
+// https://leetcode.com/problems/coin-change-ii/
+
+public class coin_change2 {
+// Driver Code 
+    public static void main(String[] args) {
+        int[] arr = {1,2,3};
+        int value = 4 ;
+        int n = arr.length;
+        long[][] dp = new long[n][value +1];
+        for (long row[]: dp) Arrays.fill(row,-1);
+        System.out.println(countWaysToMakeChange(n-1,value,arr,dp));
+
+
+    }
+    // recursion approach 
+    static long  countWaysToMakeChange(int n , int value, int denominations[]){
+        //base case
+        if (n == 0 )
+           if (value % denominations[0] == 0){
+               return 1 ;
+           }
+           else return 0 ;
+
+
+        long notTaken = countWaysToMakeChange(n-1,value,denominations);
+        long taken = 0 ;
+        if (denominations[n] <= value){
+            taken = countWaysToMakeChange(n,value-denominations[n],denominations);
+
+        }
+        return notTaken + taken;
+    }
+    // memorazation Approch 
+
+    static long  countWaysToMakeChange(int n , int value, int denominations[],long[][]dp){
+        //base case
+        if (n == 0 ){
+            if (value % denominations[0] == 0){
+                return 1 ;
+            }
+            else return 0 ;
+
+        }
+        if (dp[n][value] != -1 ) return dp[n][value];
+        long notTaken = countWaysToMakeChange(n-1,value,denominations);
+        long taken = 0 ;
+        if (denominations[n] <= value){
+            taken = countWaysToMakeChange(n,value-denominations[n],denominations);
+
+        }
+        return dp[n][value] =  notTaken + taken;
+    }
+}
+// Tabulation Approch 
+
+ static long countWaysToMakeChange(int[] arr, int value){
+        int n = arr.length;
+        long[][] dp = new long[n][value+1];
+        // base case
+        for (int i = 0; i <= value; i++) {
+            if (i % arr[0] == 0){
+                dp[0][i] =1 ;
+            }
+
+        }
+        for (int ind = 1; ind < n; ind++) {
+            for (int target = 0; target <= value ; target++) {
+                long notTaken = dp[ind-1][target];
+                long take = 0 ;
+                if (arr[ind] <= target){
+                    take = dp[ind][target - arr[ind]];
+                }
+                dp[ind][target] = notTaken + take;
+
+            }
+
+        }
+        return dp[n-1][value];
+    }
+}
