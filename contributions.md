@@ -1,4 +1,8 @@
 #DSA
+
+## Please Make your Pull requests in Hacktoberfest2022 folder Only, Only those Pull requests will merge. 
+Here is link : https://github.com/Raghavarya2002/DSA/tree/main/Hacktoberfest2022
+
 # Hacktoberfest 2022 `OPEN FIRST` Pull Request - `FREE T-SHIRT`🎉
 This is so you can learn and get started with Open-source. Easy, Simple and Intuitive Repo for all Coders out there 🤩!!
 ## This project is perfect for your first pull request
