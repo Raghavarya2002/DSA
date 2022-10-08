@@ -15,7 +15,8 @@ Guidelines For Hacktoberfest2022 Contributions in this repository:
 
 
 ## Create a file in the Hactoberfest2022 folder in DSA repository of your prefered language.
-
+## Please make Pull request in hacktoberfest2022 directory, here is the link for the directory.
+https://github.com/Raghavarya2002/DSA/tree/main/Hacktoberfest2022
 ## Instructions-
 
 - Fork this Repository using the button at the top
