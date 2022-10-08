@@ -1,0 +1,38 @@
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        int j=s.length()-1;
+        int i=0;
+        for (int k=0;k<s.length();k++){
+            bool test=true;
+            bool test1=true;
+            if ((s[i]>=48 && s[i]<=57)||(s[j]>=48 && s[j]<=57))test=false;
+            if (s[j]>=48 && s[j]<=57)test1=false;
+
+            
+            if(test &&('A'>s[i]  ||('Z'<s[i]&& 'a'>s[i])|| 'z'<s[i] )){i++;continue;}
+            if(test1 &&( 'A'>s[j] ||('Z'<s[j]&&'a'>s[j])|| 'z'<s[j])){j--;continue;}
+           cout<<int(s[i])<<int(s[j]);
+            if (65<=(int (s[i])) && (int (s[i]))<=90){
+                s[i]=s[i]-'A'+'a';
+                
+            }
+            if (65<=int (s[j]) && (int (s[j]))<=90){
+                s[j]=s[j]-'A'+'a';
+                }
+
+            if (s[i]!=s[j])return false;
+            
+            
+            i++;
+            j--;
+        }
+        return true;
+    }
+};
+int main()
+{
+Solution obj;
+bool ans=obj.isPalindrome("noon");
+cout<<ans;
+}
