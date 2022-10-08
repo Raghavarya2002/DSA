@@ -20,7 +20,7 @@ public:
             {
                 // kitni kami reh gyi total
                 deficit += balance;
-                // jab 0 index se 3 tk nhi ja paye to its gauranteed ki 1,2 se bhi nhi ja payenge bcoz all boxes are contributing positively
+                // jab 0 index 3 tk nhi ja paye to its gauranteed ki 1,2 se bhi nhi ja payenge bcoz all boxes are contributing positively
                 start = i + 1;
                 balance = 0;
             }
