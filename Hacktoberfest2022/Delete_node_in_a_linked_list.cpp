@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-// Definition for singly-linked list.
+
 struct ListNode
  {
      int val;
@@ -17,7 +17,10 @@ struct ListNode
      {
          swap(node->val, node->next->val);
          if (node->next->next)
+         {
              deleteNode(node->next);
+         }
+            
          else
              node->next = nullptr;
      }
