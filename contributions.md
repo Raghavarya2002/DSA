@@ -1,4 +1,8 @@
 #DSA
+
+## Please Make your Pull requests in Hacktoberfest2022 folder Only, Only those Pull requests will merge. 
+Here is link : https://github.com/Raghavarya2002/DSA/tree/main/Hacktoberfest2022
+
 # Hacktoberfest 2022 `OPEN FIRST` Pull Request - `FREE T-SHIRT`🎉
 This is so you can learn and get started with Open-source. Easy, Simple and Intuitive Repo for all Coders out there 🤩!!
 ## This project is perfect for your first pull request
@@ -22,8 +26,7 @@ https://github.com/Raghavarya2002/DSA/tree/main/Hacktoberfest2022
 - Fork this Repository using the button at the top
 - Clone your forked repository to your pc ( git clone "url from clone option")
 - Create a new branch for your modifications (ie. `git branch new-user` and check it out `git checkout new-user` and `git checkout -b new-user`)
-- Add your code in the specific language folder in the repo.
-- Write a program to print your name in star pattern in any language of your choice.
+- Add your code in the specific Hactoberfest2022 folder in the repo.
 - Add your files (`git add .`), commit (`git commit -m "added myself"`) and push (`git push origin new-user`)
 - Create a pull request
 - Star this repository
