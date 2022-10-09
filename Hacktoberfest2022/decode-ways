@@ -1,0 +1,39 @@
+class Solution {
+    public int numDecodings(String s) {
+        int n = s.length();
+        int []  arr = new int[n];
+        int valPrev = Character.getNumericValue(s.charAt(0));
+        if(valPrev==0){
+            return 0;
+        }else{
+            arr[0]=1;
+        }    
+        for(int i =1;i<n;i++){
+            int val = Character.getNumericValue(s.charAt(i));
+            if(valPrev==0){
+                if(val==0){
+                    return 0;
+                }else{
+                    arr[i]=arr[i-1];
+                } 
+            }else{
+                if(val==0){
+                    if(valPrev>2){
+                        return 0;
+                    }else{
+                        arr[i]=(i==1)?1:arr[i-2];
+                    }
+                }else{
+                    if(valPrev*10+val<=26){
+                        arr[i] = (i>1)?arr[i-1]+arr[i-2]:arr[i-1]+1;
+                    }else{
+                        arr[i]=arr[i-1];
+                    }
+                }
+            }
+ 
+            valPrev = val;
+        }
+        return arr[n-1];
+    }
+}
