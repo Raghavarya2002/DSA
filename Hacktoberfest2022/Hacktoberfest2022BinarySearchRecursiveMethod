@@ -30,7 +30,7 @@ int main(){
     for(int elementIndex = 0 ; elementIndex < size ; elementIndex++)
         cin>>arr[elementIndex];
     
-    cout<<"Enter element to be searched: ";
+    cout<<"Enter the element to be searched: ";
     int searchElement;
     cin>>searchElement;
 
@@ -39,8 +39,7 @@ int main(){
         cout<<"Element found at index "<<binarySearchRecursively(arr , searchElement , low , high);
 
     else 
-        cout<<"Element does not exist"<<endl;
+        cout<<"This element was not found :("<<endl;
 
 return 0;
-
 }

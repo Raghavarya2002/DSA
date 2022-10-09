@@ -1,0 +1,41 @@
+//Leetcode Question : https://leetcode.com/problems/trapping-rain-water/
+
+class Solution {
+public:
+    int trap(vector<int>& height) {
+         int amt=0;
+        
+        
+        
+        int pmax[height.size()];//pmax[0] and pmax [n-1]  will remain empty therefore we can use it for other purpose
+        
+        pmax[0]=height.size();
+        if(pmax[0]>1){
+            pmax[1]=height[0];//error is coming becouse there is possibility of one wall or zero or null wall
+         for(int i=2;i<pmax[0]-1;i++){
+            if(pmax[i-1]>height[i-1]){
+                pmax[i]=pmax[i-1];
+            }
+            else{
+                pmax[i]=height[i-1];
+            }
+        }
+        
+         int temp=height[pmax[0]-1];
+            for(int i=pmax[0]-2;i>0;i--){
+                if(temp<height[i+1]){
+                    temp =height[i+1];
+            }
+                if((height[i]<temp)&&(height[i]<pmax[i])){
+                    amt+= min(temp,pmax[i])-height[i];
+            }
+            
+            
+        }
+        }
+     
+        return amt;
+        
+        
+    }
+};
