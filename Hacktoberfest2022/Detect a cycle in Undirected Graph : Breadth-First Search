@@ -1,77 +1,86 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
-class GFG
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+
+class cycle
 {
-    public static void main(String[] args) throws IOException
-    {
-       
-            int V = 5;
-            ArrayList<ArrayList<Integer>>adj = new ArrayList<>();
-            for(int i = 0; i < V; i++)
-                adj.add(i, new ArrayList<Integer>());
-                adj.get(0).add(1);
-                adj.get(0).add(2);
-                adj.get(2).add(3);
-                adj.get(1).add(3);
-                adj.get(2).add(4);
+	
+public static void main(String arg[])
+{
 
-            Solution obj = new Solution();
-            boolean ans = obj.isCycle(V, adj);
-            if(ans)
-                System.out.println("Yes");
-            else
-                System.out.println("No");
-        }
-    }
+	int V = 4;
+	@SuppressWarnings("unchecked")
+	ArrayList <Integer> adj[] = new ArrayList[V];
+	for(int i = 0; i < 4; i++)
+	adj[i] = new ArrayList<Integer>();
 
+	addEdge(adj, 0, 1);
+	addEdge(adj, 1, 2);
+	addEdge(adj, 2, 0);
+	addEdge(adj, 2, 3);
 
-class Node {
-    int first;
-    int second;
-    public Node(int first, int second) {
-        this.first = first;
-        this.second = second; 
-    }
+	if (isCyclicDisconntected(adj, V))
+	System.out.println("Yes");
+	else
+	System.out.println("No");
 }
-class Solution
+
+static void addEdge(ArrayList<Integer> adj[], int u, int v)
 {
-   static boolean checkForCycle(ArrayList<ArrayList<Integer>> adj, int s,
-            boolean vis[])
-    {
-       Queue<Node> q =  new LinkedList<>(); //BFS
-       q.add(new Node(s, -1));
-       vis[s] =true;
-       
-       while(!q.isEmpty())
-       {
-           int node = q.peek().first;
-           int par = q.peek().second;
-           q.remove(); 
-           
-           for(Integer it: adj.get(node))
-           {
-               if(vis[it]==false)  
-               {
-                   q.add(new Node(it, node));
-                   vis[it] = true; 
-               }
-        
-               else if(par != it) return true;
-           }
-       }
-       
-       return false;
-    }
-    public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj)
-    {
-        boolean vis[] = new boolean[V];
-        Arrays.fill(vis,false);
-        for(int i=0;i<V;i++)
-            if(vis[i]==false) 
-                if(checkForCycle(adj, i,vis)) 
-                    return true;
+	adj[u].add(v);
+	adj[v].add(u);
+}
+
+static boolean isCyclicConntected(
+							ArrayList<Integer> adj[], int s,
+									int V, boolean visited[])
+{
+
+
+	int parent[] = new int[V];
+	Arrays.fill(parent, -1);
+
+
+	Queue<Integer> q = new LinkedList<>();
     
-        return false;
-    }
+	visited[s] = true;
+	q.add(s);
+
+	while (!q.isEmpty())
+	{
+
+	int u = q.poll();
+
+	for (int i = 0; i < adj[u].size(); i++)
+	{
+		int v = adj[u].get(i);
+		if (!visited[v])
+		{
+		visited[v] = true;
+		q.add(v);
+		parent[v] = u;
+		}
+		else if (parent[u] != v)
+		return true;
+	}
+	}
+	return false;
+}
+
+
+static boolean isCyclicDisconntected(
+					ArrayList<Integer> adj[], int V)
+{
+
+	// Mark all the vertices as not visited
+	boolean visited[] = new boolean[V];
+	Arrays.fill(visited,false);
+
+	for (int i = 0; i < V; i++)
+	if (!visited[i] &&
+		isCyclicConntected(adj, i, V, visited))
+		return true;
+	return false;
+}
 }
