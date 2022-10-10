@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+void bubbleSort(int arr[],int n)
+{
+    for (int i=0;i<n-1;i++ )
+    {
+        for (int j=0;j<n-1-i;j++)
+        {
+            if (arr[j]>arr[j+1])
+            {
+                swap(arr[j],arr[j+1]);
+            }
+        }
+    }
+    
+}
+
+int main()
+{
+  int arr[] = {5,7,3,1,9,2,6,11,8,0};
+  bubbleSort(arr,10);
+  
+  cout<<"3rd smallest element is "<<arr[2];
+  return 0;
+}
+  
