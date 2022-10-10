@@ -1,45 +1,28 @@
-#include<bits/stdc++.h>
-using namespace std;
+import java.util.*;
+class binarysearch {
 
-int binarySearchRecursively(int arr[] , int searchElement , int low , int high){
-    if(low <= high){
+	
+	int binarySearch(int arr[], int x)
+	{
 
-        int mid = (low + high)/2;
-
-        if(arr[mid] == searchElement)
-            return mid;
-
-        if(arr[mid] < searchElement)
-           return binarySearchRecursively(arr , searchElement , mid + 1 , high) ;
-        
-        if(arr[mid] > searchElement)
-           return binarySearchRecursively(arr , searchElement , low , mid - 1) ;
-        
-    }
-
-    return -1;
-}
-
-int main(){
-    int size;
-    cout<<"Enter total number of elements : ";
-    cin>>size;
-
-    int arr[size] , low = 0 , high = size ;
-
-    for(int elementIndex = 0 ; elementIndex < size ; elementIndex++)
-        cin>>arr[elementIndex];
-    
-    cout<<"Enter the element to be searched: ";
-    int searchElement;
-    cin>>searchElement;
+		int l = 0, r = arr.length - 1;
 
 
-    if(binarySearchRecursively(arr , searchElement , low , high))
-        cout<<"Element found at index "<<binarySearchRecursively(arr , searchElement , low , high);
+		while (l <= r) {
+			int m = l + (r - l) / 2;
 
-    else 
-        cout<<"This element was not found :("<<endl;
+			if (arr[m] == x)
+				return m;
 
-return 0;
-}
+
+			if (arr[m] < x)
+				l = m + 1;
+
+
+			else
+				r = m - 1;
+		}
+
+
+		return -1;
+	}
