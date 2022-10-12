@@ -1,6 +1,10 @@
 # Binary Tree Node
-""" utility that allocates a newNode
-with the given key """
+
+"""
+Author: Gurneet Singh
+Program Title: utility that allocates a newNode with the given key 
+Github Link :  https://github.com/SinghGurneet21
+"""
  
  
 class newNode:
