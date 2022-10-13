@@ -1,4 +1,4 @@
-##DSA
+## DSA
 
 ## Follow Me on Github and other social media as well.
 
