@@ -1,0 +1,24 @@
+class Solution {
+    public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+        //Scanner sc = new sc.nextInt();
+        int res =0;
+        int checkInd =0;
+        if(ruleKey.equals("color")){
+            checkInd =1;
+            
+        }
+        if(ruleKey.equals("name")){
+            checkInd =2;
+            
+        }
+        
+     for(int i=0;i<items.size();i++){
+         List<String> al = items.get(i);
+         if(al.get(checkInd).equals(ruleValue)){
+             res++;
+         }
+     }
+        return res;
+        
+    }
+}
